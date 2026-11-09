@@ -12,9 +12,6 @@ An imputed value that differs from the ground truth is an *imputation error*, no
 | **CHRMI** | World | Does the imputation make the instance easier to classify than its true values do? | Yes | [`codes/chrmi.py`](codes/chrmi.py) |
 | **RIHI** | Model ∧ World | Is the instance both unsupported *and* materially over-committed? | Yes | [`codes/mowi_index.py`](codes/mowi_index.py) |
 
-![Pictorial depiction of the proposed hallucination metrics](figs/hallucination_metrics.png)
-
-*The blue band is the tolerance band $\mathbb{E}[x_j \mid x_k] \pm \delta_{j|k}$ fitted on the reference data, and the red shading is the classifier's confidence in the true class, $\pi_g(y_i \mid x)$. Each arrow goes from the true value (open circle) to the imputed value (filled circle). (a) Inside the band, difficulty preserved. (b) Outside the band ($\nu_{ijk}=1$, counted by HIMDI), but the instance becomes harder to classify ($\Delta_i < 0$): information loss, not hallucination. (c) Confidence in the true class increases ($\Delta_i > 0$, counted by CHRMI) while staying inside the band, so the change is supported by the data. (d) Both unsupported and materially over-committed: only this case contributes to RIHI.*
 
 ### HIMDI — Hallucination Index for Missing Data Imputation
 
